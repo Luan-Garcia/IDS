@@ -126,23 +126,6 @@ void packet_handler(u_char *args, const struct pcap_pkthdr *header, const u_char
 }
 
 int main() {
-
-	IDSDependencies deps;
-    if (read_dependencies("ids_dependencies.ini", &deps) != 0) {
-        return 1; 
-    }
-    
-    printf("Biblioteca libpcap: %s\n", deps.libpcap);
-    printf("Biblioteca libnet: %s\n", deps.libnet);
-    printf("Biblioteca libssl: %s\n", deps.libssl);
-    printf("Biblioteca libcrypto: %s\n", deps.libcrypto);
-    printf("Compilador: %s\n", deps.gcc);
-    printf("Make: %s\n", deps.make);
-    printf("Arquivos de fonte: %s\n", deps.source_files);
-    printf("Arquivos de cabeçalho: %s\n", deps.header_files);
-    printf("Diretório de instalação: %s\n", deps.install_directory);
-    printf("Comando de compilação: %s\n", deps.compile_command);
-    printf("Instruções de instalação: %s\n", deps.install_instructions);
 	
     char interface_name[256];
     if (find_private_ipv4_interface(interface_name, sizeof(interface_name)) == -1) {
